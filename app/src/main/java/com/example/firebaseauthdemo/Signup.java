@@ -49,8 +49,6 @@ public class Signup extends AppCompatActivity {
     Button buttom_signup;
     TextView signIn;
     FirebaseAuth firebaseAuth;
-    LinearLayout lyt_progress,signup;
-    ProgressBar progressBar;
     String name;
 
     @Override
@@ -68,20 +66,11 @@ public class Signup extends AppCompatActivity {
             password = findViewById(R.id.password_signup);
             buttom_signup = findViewById(R.id.button_signup);
             signIn = findViewById(R.id.signin_signup);
-            lyt_progress = (LinearLayout) findViewById(R.id.signup_loading);
-            progressBar = findViewById(R.id.progress_signup);
-            signup = findViewById(R.id.signup_layout);
-            progressBar.getIndeterminateDrawable().setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
-            lyt_progress.setVisibility(View.GONE);
-
         }
 
         buttom_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lyt_progress.setVisibility(View.VISIBLE);
-                lyt_progress.setAlpha(1.0f);
-                signup.setVisibility(View.GONE);
                 final String emailID = emailId.getText().toString();
                 String paswd = password.getText().toString();
                 name = username.getText().toString();
